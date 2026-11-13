@@ -23,8 +23,8 @@ Read `CONTRIBUTING.md` and `AGENTS.md` yourself before reviewing.
 4. **Style (CONTRIBUTING.md):** type hints on parameters and return values, descriptive names,
    no single-letter names beyond a few lines, docstring explains the behavior, comments say
    why rather than what, lines at most 88 characters, no new third-party imports.
-5. **Upstream safety:** no upstream issue URL or `TheAlgorithms/Python#<number>` in any
-   message or text that will be committed or posted.
+5. **Upstream safety:** no upstream issue URL, `TheAlgorithms/Python#<number>` or bare
+   `#<number>` in any message or text that will be committed or posted.
 
 ## Output format
 A short list of findings, each tagged **[blocker]**, **[should fix]** or **[nit]**, with file and

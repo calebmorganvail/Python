@@ -31,8 +31,10 @@ write or change algorithm code. If a check fails, stop and report; do not fix an
 7. **Write the PR body** to a temporary file outside the repo (for example
    `/tmp/pr-body.md`): copy `.github/pull_request_template.md`, tick `[x]` only for items that
    are true for this change (at least one box under "Describe your change"), add two or three
-   sentences on what was wrong and how it was fixed, and end with `Fixes #<number>`.
-   Do not link the upstream issue.
+   sentences on what was wrong and how it was fixed, and end with
+   `Addresses upstream issue <number>` in plain words. Do not write `#<number>`, a closing
+   keyword (`Fixes`, `Closes`, `Resolves`) or the issue URL: in a fork each of these links
+   the PR on the upstream issue. Leave the template's last checkbox unticked for that reason.
 8. **Open the PR on the fork:**
    `gh pr create --repo OWNER/REPO --base master --head <branch> --title "<title>" --body-file /tmp/pr-body.md`
 9. **Verify the target:** `gh pr view <url> --repo OWNER/REPO --json url,baseRefName,headRefName,files`

@@ -49,8 +49,8 @@ fi
 
 # 5. Text that makes GitHub post a mention on the upstream issue.
 if has 'git +commit' || has "$GH_WRITE"; then
-    has "$UPSTREAM_OWNER/[A-Za-z0-9_.-]+(#|/(issues|pull)/)[0-9]" \
-        && block "do not link the upstream issue (URL or owner/repo#number); write 'Fixes #<number>' in the PR body only."
+    has "($UPSTREAM_OWNER/[A-Za-z0-9_.-]+(#|/(issues|pull)/)[0-9]|(^|[^A-Za-z0-9&])#[0-9]+)" \
+        && block "do not reference the upstream issue (URL, owner/repo#number or #number); write 'upstream issue <number>' in plain words."
 fi
 
 exit 0
